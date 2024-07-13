@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sauharda.oop_projects.studentprofile.StudentProfileController">
+   <children>
+      <Label layoutX="33.0" layoutY="29.0" text="Student Profile Maker">
+         <font>
+            <Font name="Al Nile Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="86.0" text="Name:" />
+      <Label layoutX="33.0" layoutY="120.0" text="ID:" />
+      <Label layoutX="330.0" layoutY="86.0" text="Gender:" />
+      <Label layoutX="330.0" layoutY="120.0" text="DOB:" />
+      <TextField fx:id="nameTextField" layoutX="91.0" layoutY="82.0" />
+      <TextField fx:id="idTextField" layoutX="91.0" layoutY="116.0" />
+      <RadioButton fx:id="maleRadioButton" layoutX="400.0" layoutY="86.0" mnemonicParsing="false" text="Male" />
+      <RadioButton fx:id="femaleRadioButton" layoutX="483.0" layoutY="86.0" mnemonicParsing="false" text="Female" />
+      <Label layoutX="31.0" layoutY="158.0" text="Nationality:" />
+      <Button fx:id="createProfileButton" layoutX="377.0" layoutY="152.0" mnemonicParsing="false" onAction="#createProfileOnClick" prefHeight="30.0" prefWidth="186.0" text="Create Profile" />
+      <DatePicker fx:id="dateOfBirthDatePicker" layoutX="377.0" layoutY="117.0" />
+      <ComboBox fx:id="nationalityComboBox" layoutX="101.0" layoutY="155.0" prefWidth="150.0" />
+      <TextArea fx:id="displayTextArea" layoutX="73.0" layoutY="200.0" prefHeight="176.0" prefWidth="455.0" />
+      <Button layoutX="273.0" layoutY="32.0" mnemonicParsing="false" text="Button" />
+   </children>
+</AnchorPane>
