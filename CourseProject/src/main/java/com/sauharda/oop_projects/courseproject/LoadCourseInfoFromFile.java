@@ -6,7 +6,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.ObjectInputStream;
 import java.util.Scanner;
 
 public class LoadCourseInfoFromFile
@@ -66,5 +68,24 @@ public class LoadCourseInfoFromFile
 
     @javafx.fxml.FXML
     public void loadCourseInfoFromCourseInfobinOnAction(ActionEvent actionEvent) {
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+
+        try{
+            File f = new File("courseInfo.bin");
+            if (f.exists()){
+                fis = new FileInputStream(f);
+            }
+            else{
+                //
+            }
+            ois = new ObjectInputStream(fis);
+            while(true){
+                courseInfoBinTableView.getItems().add((Course)ois.readObject());
+            }
+        }
+        catch(Exception e){
+            //
+        }
     }
 }

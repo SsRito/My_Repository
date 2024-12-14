@@ -1,1 +1,4 @@
-134,deg,Core,3
+101,Intro,Foundation,3
+102,sdef,Minor,3
+123,erw,Minor,4
+452,rtw,Major,3

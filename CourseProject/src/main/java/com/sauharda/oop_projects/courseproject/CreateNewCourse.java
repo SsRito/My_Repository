@@ -9,10 +9,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
-import java.io.File;
-import java.io.FileWriter;
 
 public class CreateNewCourse
 {
@@ -37,6 +35,28 @@ public class CreateNewCourse
 
     @javafx.fxml.FXML
     public void saveCourseListToABinaryFileUsingObjectStreamOnAction(ActionEvent actionEvent) {
+        File f = new File("courseInfo.bin");
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+
+        try {
+            if (f.exists()){
+                fos = new FileOutputStream(f, true);
+                oos = new AppendableObjectOutputStream(fos);
+            }
+            else{
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);
+            }
+            for (Course c: courseList){
+                oos.writeObject(c);
+            }
+            oos.close();
+        }
+
+        catch(Exception e){
+            //
+        }
     }
 
     @javafx.fxml.FXML

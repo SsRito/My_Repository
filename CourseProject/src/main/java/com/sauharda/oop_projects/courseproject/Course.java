@@ -1,6 +1,6 @@
 package com.sauharda.oop_projects.courseproject;
 
-public class Course {
+public class Course implements Serializable {
     private String courseId, title, type;
     private int noOfCredits;
 
